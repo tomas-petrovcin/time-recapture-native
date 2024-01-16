@@ -11,6 +11,7 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.73.6)
   - fmt (6.2.1)
   - glog (0.3.5)
+  - hermes (0.4.3)
   - RCT-Folly (2022.05.16.00):
     - boost
     - DoubleConversion
@@ -852,6 +853,10 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
+  - react-native-menubar-extra (0.3.1):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
   - React-nativeconfig (0.73.6)
   - React-NativeModulesApple (0.73.6):
     - glog
@@ -1015,6 +1020,15 @@ PODS:
     - React-jsi (= 0.73.6)
     - React-logger (= 0.73.6)
     - React-perflogger (= 0.73.6)
+  - RNCAsyncStorage (1.21.0):
+    - React-Core
+  - RNCClipboard (1.13.2):
+    - React-Core
+  - RNReanimated (3.6.1):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
+    - ReactCommon/turbomodule/core
   - SocketRocket (0.7.0)
   - Yoga (1.14.0)
 
@@ -1024,6 +1038,7 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native-macos/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native-macos/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native-macos/third-party-podspecs/glog.podspec`)
+  - hermes (from `../node_modules/hermes-engine-darwin`)
   - RCT-Folly (from `../node_modules/react-native-macos/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native-macos/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native-macos/Libraries/RCTRequired`)
@@ -1047,6 +1062,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native-macos/ReactCommon/jsinspector-modern`)
   - React-logger (from `../node_modules/react-native-macos/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native-macos/ReactCommon`)
+  - react-native-menubar-extra (from `../node_modules/react-native-menubar-extra`)
   - React-nativeconfig (from `../node_modules/react-native-macos/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native-macos/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native-macos/ReactCommon/reactperflogger`)
@@ -1067,6 +1083,9 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native-macos/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native-macos/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native-macos/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - Yoga (from `../node_modules/react-native-macos/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -1085,6 +1104,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-macos/React/FBReactNativeSpec"
   glog:
     :podspec: "../node_modules/react-native-macos/third-party-podspecs/glog.podspec"
+  hermes:
+    :path: "../node_modules/hermes-engine-darwin"
   RCT-Folly:
     :podspec: "../node_modules/react-native-macos/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -1127,6 +1148,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-macos/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native-macos/ReactCommon"
+  react-native-menubar-extra:
+    :path: "../node_modules/react-native-menubar-extra"
   React-nativeconfig:
     :path: "../node_modules/react-native-macos/ReactCommon"
   React-NativeModulesApple:
@@ -1167,6 +1190,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-macos/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native-macos/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNCClipboard:
+    :path: "../node_modules/@react-native-clipboard/clipboard"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   Yoga:
     :path: "../node_modules/react-native-macos/ReactCommon/yoga"
 
@@ -1177,6 +1206,7 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 879fc26f82f039ee99e4b5c76e27dfeaf1e4c5c5
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 905b36b53c03b6e3afad8c8868237e84df8e17c4
+  hermes: e6c81c75290bb87d1d62d594c269fba09b84e216
   RCT-Folly: 270f9eebb5a7d757382d0438ea993e4d7aa85932
   RCTRequired: 92b0f85aed24ec1c1adc6209c63cc33f7618fb6a
   RCTTypeSafety: 046c4b8a5c02c114d93d57b23c574efd844224d8
@@ -1198,6 +1228,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 97a12bacb295adfba40b93e0ea6fb08bc8eda0c3
   React-logger: 5f446ab1fa423847c881c7085b35104d1127d02c
   React-Mapbuffer: 13ba0c02790264ca1abe8a6dff08457abe22ff88
+  react-native-menubar-extra: 2b9d48fb85e4e7e82a7e8ca6480fd7890630d00b
   React-nativeconfig: a362004abc38793316c66921cd4b5bef2785442d
   React-NativeModulesApple: ac96c9683ef9e03d3250f4b16a47da0b0fd8b202
   React-perflogger: b946138dfdfb26d8a75df399292f993a9b09fe20
@@ -1218,9 +1249,12 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 06ca3657c857fb14d00ec548c489f3b8c552601e
   React-utils: 68f5b33b6957324718290e3c7eda822db1da9b56
   ReactCommon: e80b030b22caf9def0e375bb5a46c02305b95e10
+  RNCAsyncStorage: 618d03a5f52fbccb3d7010076bc54712844c18ef
+  RNCClipboard: 60fed4b71560d7bfe40e9d35dea9762b024da86d
+  RNReanimated: 57f436e7aa3d277fbfed05e003230b43428157c0
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 79fe7ee86686c885279b1e0bd5f780a982f22eb9
 
-PODFILE CHECKSUM: 86bb60cd39e406ae349108553468104b1f119922
+PODFILE CHECKSUM: 3b1728d5dc5c4a6eaeb28230ecdec72bec1fc5f7
 
 COCOAPODS: 1.12.1

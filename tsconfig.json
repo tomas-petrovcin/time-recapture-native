@@ -1,3 +1,14 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "paths": {
+      "@lib/components": ["./lib/components"],
+      "@lib/features": ["./lib/features"],
+      "@lib/pages": ["./lib/pages"],
+      "@lib/utils": ["./lib/utils"],
+      "@lib/api": ["./lib/api"],
+    },
+    "typeRoots": ["./lib/utils/theme/styled.d.ts", "./node_modules/@types"],
+  },
 }
