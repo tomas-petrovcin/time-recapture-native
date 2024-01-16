@@ -1,6 +1,40 @@
 export const theme = {
+  radius: {
+    small: 4,
+    medium: 12,
+    large: 24,
+    extraLarge: 32,
+  },
+
+  shadow: {
+    small: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+    medium: '0px 4px 8px rgba(0, 0, 0, 0.25)',
+    large: '0px 8px 16px rgba(0, 0, 0, 0.25)',
+  },
+
   spacingBase: 8,
   spacing: (scale: number) => `${scale * theme.spacingBase}px`,
+
+  typography: {
+    size: {
+      caption: 12,
+      label: 14,
+      body: 16,
+      headline: 20,
+      title: 24,
+      display: 32,
+    },
+
+    family: {
+      primary: {
+        regular: 'FiraCode-Regular',
+        light: 'FiraCode-Light',
+        medium: 'FiraCode-Medium',
+        bold: 'FiraCode-Bold',
+        semiBold: 'FiraCode-SemiBold',
+      },
+    },
+  },
 
   colors: {
     background: {

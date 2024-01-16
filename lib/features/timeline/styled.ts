@@ -43,5 +43,6 @@ export const TextInput = styled.TextInput`
   font-size: 18px;
   font-weight: bold;
   padding: 0 ${spacing(1)};
+  font-family: ${({ theme }) => theme.typography.family.primary.light};
   color: ${({ theme }) => theme.colors.text.main};
 `;
