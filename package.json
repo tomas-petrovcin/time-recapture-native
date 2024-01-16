@@ -7,11 +7,15 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
+    "start:macos": "react-native run-macos",
+    "start:ios": "react-native run-ios",
+    "start:android": "react-native run-android",
     "test": "jest"
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-native": "0.73.2",
+    "react-native-macos": "^0.73.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
