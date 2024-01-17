@@ -32,17 +32,29 @@ export const CurrentTime = styled(Animated.View)`
   flex-direction: row;
   align-items: center;
   gap: ${spacing(2)};
+
+  padding: ${spacing(1)} ${spacing(2)};
+  backdrop-filter: blur(100px);
+  background: ${({ theme }) => theme.colors.background.lightTransparent};
 `;
 
 export const CurrentTimeMarker = styled(Marker)`
   background: ${({ theme }) => theme.colors.accent.light};
+  height: 2px;
   flex: 1;
 `;
 
 export const TextInput = styled.TextInput`
   font-size: 18px;
-  font-weight: bold;
+  line-height: 15px;
   padding: 0 ${spacing(1)};
-  font-family: ${({ theme }) => theme.typography.family.primary.light};
+
+  font-family: 'Fira Code';
+  font-weight: 500;
+
   color: ${({ theme }) => theme.colors.text.main};
+  padding: ${spacing(1)} ${spacing(2)};
+  border: 2px solid ${({ theme }) => theme.colors.accent.light};
+  border-radius: ${({ theme }) => theme.radius.small}px;
+  box-shadow: ${({ theme }) => theme.shadow.large};
 `;

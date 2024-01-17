@@ -39,6 +39,7 @@ export const theme = {
   colors: {
     background: {
       light: '#bababa',
+      lightTransparent: '#bababa44',
       dark: '#212121',
       paper: '#313131',
     },
