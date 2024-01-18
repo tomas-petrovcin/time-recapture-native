@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Pressable } from 'react-native';
+import { Pressable } from 'react-native-macos';
 
 import { Shadow } from '../shadows';
 import { Text } from '../typography.tsx';
@@ -11,6 +11,13 @@ type Props = {
   label: string;
   onPress: () => void;
 };
+
+/*
+todo:
+- onHoverIn / onHoverOut + Reanimated
+- loading
+- shortcuts display
+ */
 
 export const Button = ({ onPress, label }: Props) => {
   return (

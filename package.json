@@ -10,7 +10,9 @@
     "start:macos": "react-native run-macos",
     "start:ios": "react-native run-ios",
     "start:android": "react-native run-android",
-    "test": "jest"
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck"
   },
   "dependencies": {
     "@apollo/client": "^3.8.9",

@@ -31,7 +31,7 @@ const getTimeOffset = (layoutHeight: string, date: string) => {
 // 25 Markers for each hour in day
 const HourlyMarkers = Array.from({ length: 25 }, (_, i) => i).map(hour => (
   <S.MarkerWrapper key={hour}>
-    <Text variant="caption">{hour}</Text>
+    <S.TimeLabel variant="caption">{hour}</S.TimeLabel>
     <S.Marker />
   </S.MarkerWrapper>
 ));
@@ -56,7 +56,13 @@ const CurrentTime = ({
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const animatedStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: getTimeOffset(layoutHeight.value, value.value) }],
+    transform: [
+      {
+        translateY:
+          getTimeOffset(layoutHeight.value, value.value) -
+          S.CURRENT_TIME_MARKER_HEIGHT / 2,
+      },
+    ],
     opacity: value.value ? 1 : 0,
   }));
 
@@ -79,9 +85,11 @@ export const Timeline = () => {
   return (
     <>
       <InnerShadow>
-        <S.Wrapper onLayout={onLayout}>
-          <S.LayoutContainer>{HourlyMarkers}</S.LayoutContainer>
-          <CurrentTime layoutHeight={layoutHeight} />
+        <S.Wrapper>
+          <S.Timeline onLayout={onLayout}>
+            <S.LayoutContainer>{HourlyMarkers}</S.LayoutContainer>
+            <CurrentTime layoutHeight={layoutHeight} />
+          </S.Timeline>
         </S.Wrapper>
       </InnerShadow>
       <Slider />

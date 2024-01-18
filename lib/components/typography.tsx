@@ -35,8 +35,8 @@ const Button = ({ theme }) => css`
 `;
 
 export const Text = styled.Text<{
-  variant: TextVariant;
-  color: keyof Theme['colors']['typography'];
+  variant?: TextVariant;
+  color?: keyof Theme['colors']['typography'];
 }>(
   ({ variant = 'body', theme: { colors }, color }) => css`
     ${variant === 'title' && Title};

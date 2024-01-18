@@ -38,10 +38,11 @@ export const theme = {
 
   colors: {
     background: {
-      light: 'transparent',
-      lightTransparent: 'transparent',
-      dark: 'transparent',
-      paper: 'transparent',
+      light: '#bababa',
+      lightTransparent: '#bababa44',
+      button: '#4a4a4a',
+      dark: '#212121',
+      paper: '#313131',
     },
     divider: {
       main: '#e8e8e8',
@@ -63,6 +64,14 @@ export const theme = {
     accent: {
       light: '#e86a26',
       dark: '#e55406',
+    },
+    success: {
+      light: '#4caf50',
+      dark: '#388e3c',
+    },
+    danger: {
+      light: '#f44336',
+      dark: '#d32f2f',
     },
   },
 } as const;
