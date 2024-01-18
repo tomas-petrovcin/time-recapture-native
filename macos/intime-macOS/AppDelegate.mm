@@ -10,6 +10,18 @@
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
+  
+  NSWindow *window = NSApplication.sharedApplication.mainWindow;
+ 
+  if (@available(macOS 10.10, *)) {
+      window.titlebarAppearsTransparent = YES;
+  }
+
+  if (@available(macOS 10.2, *)) {
+      window.movableByWindowBackground  = YES;
+  }
+
+  
 
   return [super applicationDidFinishLaunching:notification];
 }

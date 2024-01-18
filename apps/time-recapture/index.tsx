@@ -3,13 +3,13 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import { Timeline } from '@lib/features';
+import { Home } from '@lib/pages';
 import { theme } from '@lib/utils';
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Timeline />
+      <Home />
     </ThemeProvider>
   );
 };

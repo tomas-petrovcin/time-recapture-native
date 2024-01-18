@@ -12,7 +12,7 @@ export const theme = {
     large: '0px 8px 16px rgba(0, 0, 0, 0.25)',
   },
 
-  spacingBase: 8,
+  spacingBase: 6,
   spacing: (scale: number) => `${scale * theme.spacingBase}px`,
 
   typography: {

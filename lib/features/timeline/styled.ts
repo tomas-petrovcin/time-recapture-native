@@ -7,22 +7,33 @@ import { spacing } from '@lib/utils';
 export const Wrapper = styled.View`
   flex: 1;
   background: ${({ theme }) => theme.colors.background.dark};
+  border-radius: ${({ theme }) => theme.radius.large}px;
 `;
 
-export const MarkerWrapper = styled.View`
+export const LayoutContainer = styled.View`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
-  margin: 0 ${spacing(20)};
+  margin-left: ${spacing(20)};
+  border-radius: ${({ theme }) => theme.radius.large}px;
+  overflow: hidden;
 
   justify-content: space-between;
 `;
 
+export const MarkerWrapper = styled.View`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  gap: ${spacing(2)};
+`;
+
 export const Marker = styled.View`
   height: 1px;
+  flex: 1;
   display: flex;
   background: ${({ theme }) => theme.colors.divider.secondary};
 `;

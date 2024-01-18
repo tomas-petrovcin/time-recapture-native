@@ -18,6 +18,7 @@ module.exports = {
   },
   rules: {
     curly: 'off',
+    'import/namespace': 'off',
     'import/order': [
       'error',
       {

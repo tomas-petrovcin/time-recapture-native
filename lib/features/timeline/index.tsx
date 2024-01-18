@@ -11,6 +11,8 @@ import Animated, {
 
 import { format } from 'date-fns';
 
+import { Slider, InnerShadow, Text } from '@lib/components';
+
 import * as S from './styled';
 
 Animated.addWhitelistedNativeProps({ text: true });
@@ -28,7 +30,10 @@ const getTimeOffset = (layoutHeight: string, date: string) => {
 
 // 25 Markers for each hour in day
 const HourlyMarkers = Array.from({ length: 25 }, (_, i) => i).map(hour => (
-  <S.Marker key={hour} />
+  <S.MarkerWrapper>
+    <Text variant="caption">{hour}</Text>
+    <S.Marker key={hour} />
+  </S.MarkerWrapper>
 ));
 
 const CurrentTime = ({
@@ -52,6 +57,7 @@ const CurrentTime = ({
 
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{ translateY: getTimeOffset(layoutHeight.value, value.value) }],
+    opacity: value.value ? 1 : 0,
   }));
 
   return (
@@ -71,9 +77,14 @@ export const Timeline = () => {
   };
 
   return (
-    <S.Wrapper onLayout={onLayout}>
-      <S.MarkerWrapper>{HourlyMarkers}</S.MarkerWrapper>
-      <CurrentTime layoutHeight={layoutHeight} />
-    </S.Wrapper>
+    <>
+      <InnerShadow>
+        <S.Wrapper onLayout={onLayout}>
+          <S.LayoutContainer>{HourlyMarkers}</S.LayoutContainer>
+          <CurrentTime layoutHeight={layoutHeight} />
+        </S.Wrapper>
+      </InnerShadow>
+      <Slider />
+    </>
   );
 };
