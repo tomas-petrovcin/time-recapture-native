@@ -2,7 +2,6 @@
 
 @interface RCT_EXTERN_MODULE(WindowManager, NSObject)
 
-RCT_EXTERN_METHOD(makeTitlebarTransparent)
-RCT_EXTERN_METHOD(makeBackgroundMovable)
+RCT_EXTERN_METHOD(applyStyles)
 
 @end

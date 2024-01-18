@@ -30,9 +30,9 @@ const getTimeOffset = (layoutHeight: string, date: string) => {
 
 // 25 Markers for each hour in day
 const HourlyMarkers = Array.from({ length: 25 }, (_, i) => i).map(hour => (
-  <S.MarkerWrapper>
+  <S.MarkerWrapper key={hour}>
     <Text variant="caption">{hour}</Text>
-    <S.Marker key={hour} />
+    <S.Marker />
   </S.MarkerWrapper>
 ));
 

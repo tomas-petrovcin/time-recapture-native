@@ -38,10 +38,10 @@ export const theme = {
 
   colors: {
     background: {
-      light: '#bababa',
-      lightTransparent: '#bababa44',
-      dark: '#212121',
-      paper: '#313131',
+      light: 'transparent',
+      lightTransparent: 'transparent',
+      dark: 'transparent',
+      paper: 'transparent',
     },
     divider: {
       main: '#e8e8e8',

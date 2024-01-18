@@ -5,9 +5,5 @@ const { WindowManager } = NativeModules;
 // WindowManager.makeBackgroundMovable();
 
 export const MacOSWindowManager = {
-  makeTitlebarTransparent: () => {
-    console.log(WindowManager);
-    WindowManager?.makeTitlebarTransparent();
-  },
-  makeBackgroundMovable: () => WindowManager?.makeBackgroundMovable(),
+  applyStyles: () => WindowManager?.applyStyles(),
 };

@@ -3,21 +3,26 @@ import AppKit
 
 @objc(WindowManager)
 class WindowManager: NSObject {
-  
-  @objc
-  func makeTitlebarTransparent() -> Void {
-    DispatchQueue.main.async {
-      if #available(macOS 10.10, *) {
-        NSApp.windows.first?.titlebarAppearsTransparent = true
-      }
-    }
-  }
 
   @objc
-  func makeBackgroundMovable() -> Void {
+  func applyStyles() -> Void {
     DispatchQueue.main.async {
       if #available(macOS 10.2, *) {
-        NSApp.windows.first?.isMovableByWindowBackground  = true
+        guard let window = NSApp.windows.first else {return};
+        window.isMovableByWindowBackground  = true;
+        window.isOpaque = false;
+        window.hasShadow = false;
+        window.backgroundColor = NSColor.clear;
+
+        window.contentView?.wantsLayer = true
+        window.contentView?.layer?.backgroundColor = NSColor.clear.cgColor
+
+        window.titlebarAppearsTransparent = true;
+        window.styleMask = [.fullSizeContentView];
+//        if let titlebarView = window.standardWindowButton(.closeButton)?.superview?.superview {
+//            titlebarView.wantsLayer = true
+//            titlebarView.layer?.backgroundColor = NSColor.clear.cgColor
+//        }
       }
     }
   }
