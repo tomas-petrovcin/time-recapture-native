@@ -22,7 +22,7 @@ export const theme = {
       body: 16,
       headline: 20,
       title: 24,
-      display: 32,
+      display: 28,
     },
 
     family: {
@@ -37,11 +37,24 @@ export const theme = {
   },
 
   colors: {
+    userPalette: {
+      red: '#e55406',
+      orange: '#e86a26',
+      yellow: '#e8b726',
+      green: '#4caf50',
+      blue: '#4777e5',
+      purple: '#9c27b0',
+      pink: '#e91e63',
+      brown: '#795548',
+      grey: '#9e9e9e',
+    },
+
     background: {
       light: '#bababa',
       lightTransparent: '#bababa44',
       button: '#4a4a4a',
       dark: '#212121',
+      darkTransparent: '#21212199',
       paper: '#313131',
     },
     divider: {

@@ -4,16 +4,43 @@ import { storage } from '@lib/utils';
 
 const STORAGE_KEY = 'AppState';
 
-export const AppState = makeVar<string[]>(FEATURED_CITIES);
+export type Focus = 'command-bar' | 'session' | 'tasks';
 
-export const useAppStateState = () => useReactiveVar(AppState);
+export const AppState = makeVar<{
+  currentSession: Session;
+
+  focus: Focus;
+  previousFocus: Focus;
+}>({
+  currentSession: null,
+
+  focus: 'session',
+  previousFocus: null,
+});
+
+export const useAppState = () => useReactiveVar(AppState);
 
 export const resetAppState = () => {
-  AppState([]);
+  AppState({});
   storage.save(STORAGE_KEY, []);
 };
 
 export const initAppState = async () => {
   const persistedState = (await Storage.get(STORAGE_KEY)) ?? [];
   AppState(persistedState);
+};
+
+export const focus = (f: Focus) => {
+  if (f === AppState().focus) return;
+  const state = AppState();
+  AppState({
+    ...state,
+    focus: f,
+    previousFocus: state.focus,
+  });
+};
+
+export const revertFocus = () => {
+  const { previousFocus } = AppState();
+  focus(previousFocus);
 };
