@@ -29,7 +29,7 @@ const Caption = ({ theme }) => css`
 `;
 
 const Button = ({ theme }) => css`
-  font-family: ${theme.typography.family.primary.semiBold};
+  font-family: ${theme.typography.family.primary.medium};
   font-size: ${theme.typography.size.label}px;
   color: ${theme.colors.text.main};
 `;

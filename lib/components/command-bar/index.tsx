@@ -49,16 +49,15 @@ export const CommandBar = () => {
   }
 
   return (
-    <S.Wrapper onPress={revertFocus}>
-      <S.InputContainer>
-        <S.Input
-          placeholder="Create a new task.."
-          autoFocus
-          editable
-          onChangeText={setText}
-          value={text}
-        />
-      </S.InputContainer>
+    <S.Wrapper onPress={revertFocus} allowsVibrancy>
+      <S.Input
+        placeholder="Create a new task.."
+        autoFocus
+        editable
+        onChangeText={setText}
+        onSubmitEditing={revertFocus}
+        value={text}
+      />
     </S.Wrapper>
   );
 };

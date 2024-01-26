@@ -15,7 +15,7 @@ export const Home = () => {
   };
 
   return (
-    <S.Wrapper>
+    <S.Wrapper allowsVibrancy>
       <TaskScheduler />
       <S.ControlPanel>
         <Recorder />

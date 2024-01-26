@@ -1,5 +1,10 @@
 import React, { type ReactNode } from 'react';
 
+import Animated, {
+  type SharedValue,
+  useAnimatedStyle,
+} from 'react-native-reanimated';
+
 import * as S from './styled.ts';
 type Props = {
   children: ReactNode;
@@ -18,5 +23,42 @@ export const InnerShadow = ({ children }: Props) => {
     <S.InnerShadow>
       <S.InnerReflection>{children}</S.InnerReflection>
     </S.InnerShadow>
+  );
+};
+
+type AnimatedShadowProps = {
+  children: ReactNode;
+  elevation: SharedValue<number>;
+} & S.StyleProps;
+
+export const AnimatedShadow = ({
+  children,
+  elevation,
+}: AnimatedShadowProps) => {
+  const shadowStyle = useAnimatedStyle(() => ({
+    borderRadius: 30,
+    shadowRadius: elevation.value,
+    shadowColor: 'black',
+    shadowOpacity: elevation.value * 0.4,
+    shadowOffset: {
+      width: 0,
+      height: elevation.value * 2,
+    },
+  }));
+
+  const reflectionStyle = useAnimatedStyle(() => ({
+    shadowOffset: {
+      width: 0,
+      height: -1,
+    },
+    shadowRadius: 0.2,
+    shadowColor: 'white',
+    shadowOpacity: 0.5 * elevation.value,
+  }));
+
+  return (
+    <Animated.View style={shadowStyle}>
+      <Animated.View style={reflectionStyle}>{children}</Animated.View>
+    </Animated.View>
   );
 };

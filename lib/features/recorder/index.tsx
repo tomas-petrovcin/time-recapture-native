@@ -1,27 +1,25 @@
 import React from 'react';
 
-import { Pressable } from 'react-native';
-
-import { Shadow, Text } from '@lib/components';
+import { AnimatedPressable, Shadow, Text } from '@lib/components';
 
 import * as S from './styled';
 
 export const Recorder = () => {
   const onPress = () => {};
   return (
-    <Pressable onPress={onPress}>
-      {({ pressed }) => (
+    <>
+      <AnimatedPressable onPress={onPress}>
         <S.Container>
-          <Shadow pressed={pressed} noOutline>
+          <Shadow noOutline>
             <S.Wrapper>
               <S.Inner />
             </S.Wrapper>
           </Shadow>
-          <Text variant="label" color="main">
-            Record
-          </Text>
         </S.Container>
-      )}
-    </Pressable>
+      </AnimatedPressable>
+      <Text variant="label" color="main">
+        Record
+      </Text>
+    </>
   );
 };
