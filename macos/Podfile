@@ -22,9 +22,11 @@ target 'intime-macOS' do
 
 #   pod 'React-Core/Hermes', :path => '../node_modules/react-native-macos/'
 #   pod 'hermes', :path => '../node_modules/hermes-engine-darwin'
-  #pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-podspecs/libevent.podspec'
+#   pod 'libevent', :podspec => '../node_modules/react-native-macos/third-party-podspecs/libevent.podspec'
+
 
   post_install do |installer|
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
     react_native_post_install(installer)
   end
 end

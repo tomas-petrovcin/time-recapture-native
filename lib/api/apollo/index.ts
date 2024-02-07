@@ -4,29 +4,31 @@ import { storage } from '@lib/utils';
 
 const STORAGE_KEY = 'AppState';
 
-export type Focus = 'command-bar' | 'session' | 'tasks';
+export type Focus = 'command-bar' | 'session' | 'tasks' | null;
+
+const INITIAL_STATE = {
+  currentSession: null,
+
+  focus: 'session' as Focus,
+  previousFocus: null,
+};
 
 export const AppState = makeVar<{
   currentSession: Session;
 
   focus: Focus;
   previousFocus: Focus;
-}>({
-  currentSession: null,
-
-  focus: 'session',
-  previousFocus: null,
-});
+}>(INITIAL_STATE);
 
 export const useAppState = () => useReactiveVar(AppState);
 
 export const resetAppState = () => {
-  AppState({});
+  AppState(INITIAL_STATE);
   storage.save(STORAGE_KEY, []);
 };
 
 export const initAppState = async () => {
-  const persistedState = (await Storage.get(STORAGE_KEY)) ?? [];
+  const persistedState = (await storage.get(STORAGE_KEY)) ?? INITIAL_STATE;
   AppState(persistedState);
 };
 

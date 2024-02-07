@@ -65,9 +65,14 @@ export const AnimatedPressable = (props: PressableProps) => {
   );
 };
 
+type Props = {
+  onPress: () => void;
+  label: string;
+};
+
 export const Button = ({ onPress, label }: Props) => {
   return (
-    <AnimatedPressable label={label} onPress={onPress}>
+    <AnimatedPressable onPress={onPress}>
       <S.Wrapper>
         <Text variant="button" textAlign="center">
           {label}

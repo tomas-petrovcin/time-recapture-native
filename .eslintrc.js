@@ -1,7 +1,11 @@
 module.exports = {
   root: true,
   plugins: ['import'],
-  extends: ['@react-native', 'plugin:import/errors', 'plugin:import/warnings'],
+  extends: [
+    'universe/native',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
   settings: {
     'import/resolver': {
       alias: {

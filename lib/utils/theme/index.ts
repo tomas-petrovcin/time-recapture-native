@@ -55,7 +55,7 @@ export const theme = {
       button: '#4a4a4a22',
       dark: '#21212188',
       darkTransparent: '#21212199',
-      paper: '#31313188',
+      paper: '#616161ee',
     },
     divider: {
       main: '#e8e8e8',

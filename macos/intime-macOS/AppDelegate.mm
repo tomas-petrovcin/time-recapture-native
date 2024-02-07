@@ -11,7 +11,7 @@
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
   
-  NSWindow *window = NSApplication.sharedApplication.mainWindow';
+  NSWindow *window = NSApplication.sharedApplication.mainWindow;
  
   if (@available(macOS 10.10, *)) {
       window.titlebarAppearsTransparent = YES;

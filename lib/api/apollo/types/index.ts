@@ -3,7 +3,7 @@ type Session = {
   name: string;
   notes: string;
   taskId: string;
-};
+} | null;
 
 type Task = {
   id: string;
