@@ -7,7 +7,6 @@ export const Wrapper = styled.View`
   flex-direction: row;
   padding: ${spacing(4)} ${spacing(4)};
   gap: ${spacing(4)};
-  background: ${({ theme }) => theme.colors.background.paper};
   border-radius: ${({ theme }) => theme.radius.large}px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

@@ -16,8 +16,9 @@
 		65074F102B56DA73006ABFFD /* FiraCode-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65074F0B2B56DA73006ABFFD /* FiraCode-Bold.ttf */; };
 		65074F112B56DA73006ABFFD /* FiraCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65074F0C2B56DA73006ABFFD /* FiraCode-Regular.ttf */; };
 		65074F122B56DA73006ABFFD /* FiraCode-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65074F0D2B56DA73006ABFFD /* FiraCode-SemiBold.ttf */; };
+		651A305C2B741B0B0045C0EC /* KeyEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651A305B2B741B0B0045C0EC /* KeyEventListener.swift */; };
+		651A30602B741CA20045C0EC /* Bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = 651A305F2B741CA20045C0EC /* Bridging.m */; };
 		651DA7F22B59BC4500E15D4F /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651DA7F12B59BC4500E15D4F /* WindowManager.swift */; };
-		651DA7F82B59C69300E15D4F /* WindowManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 651DA7F72B59C69300E15D4F /* WindowManagerBridge.m */; };
 		A0D26CE77A8B6B5F1F1AE616 /* libPods-intime-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3052D0BD3D2AC38E146200 /* libPods-intime-macOS.a */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +38,10 @@
 		65074F0B2B56DA73006ABFFD /* FiraCode-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Bold.ttf"; sourceTree = "<group>"; };
 		65074F0C2B56DA73006ABFFD /* FiraCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Regular.ttf"; sourceTree = "<group>"; };
 		65074F0D2B56DA73006ABFFD /* FiraCode-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-SemiBold.ttf"; sourceTree = "<group>"; };
+		651A305B2B741B0B0045C0EC /* KeyEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventListener.swift; sourceTree = "<group>"; };
+		651A305F2B741CA20045C0EC /* Bridging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridging.m; sourceTree = "<group>"; };
 		651DA7F02B59BC4500E15D4F /* intime-macOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "intime-macOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		651DA7F12B59BC4500E15D4F /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
-		651DA7F72B59C69300E15D4F /* WindowManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowManagerBridge.m; sourceTree = "<group>"; };
 		8172A741315E7CC9EE326894 /* Pods-intime-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intime-macOS.debug.xcconfig"; path = "Target Support Files/Pods-intime-macOS/Pods-intime-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F385739E2067C6C15FCD37CA /* Pods-intime-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-intime-macOS.release.xcconfig"; path = "Target Support Files/Pods-intime-macOS/Pods-intime-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,8 +80,9 @@
 			children = (
 				5142014B2437B4B30078DB4F /* AppDelegate.h */,
 				5142014C2437B4B30078DB4F /* AppDelegate.mm */,
+				651A305F2B741CA20045C0EC /* Bridging.m */,
 				651DA7F12B59BC4500E15D4F /* WindowManager.swift */,
-				651DA7F72B59C69300E15D4F /* WindowManagerBridge.m */,
+				651A305B2B741B0B0045C0EC /* KeyEventListener.swift */,
 				514201512437B4B40078DB4F /* Assets.xcassets */,
 				514201532437B4B40078DB4F /* Main.storyboard */,
 				514201562437B4B40078DB4F /* Info.plist */,
@@ -350,10 +353,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				651DA7F82B59C69300E15D4F /* WindowManagerBridge.m in Sources */,
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
 				651DA7F22B59BC4500E15D4F /* WindowManager.swift in Sources */,
+				651A305C2B741B0B0045C0EC /* KeyEventListener.swift in Sources */,
+				651A30602B741CA20045C0EC /* Bridging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

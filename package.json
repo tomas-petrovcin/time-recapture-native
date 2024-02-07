@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.9",
+    "@fluentui-react-native/vibrancy-view": "^0.1.0",
+    "@fluentui/react-native": "^0.40.2",
     "@react-native-async-storage/async-storage": "^1.21.0",
     "@react-native-clipboard/clipboard": "^1.13.2",
     "@realm/react": "^0.6.2",
