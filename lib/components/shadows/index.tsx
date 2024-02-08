@@ -39,7 +39,7 @@ export const AnimatedShadow = ({
     borderRadius: 30,
     shadowRadius: elevation.value,
     shadowColor: 'black',
-    shadowOpacity: elevation.value * 0.4,
+    shadowOpacity: Math.min(elevation.value * 0.2, 0.4),
     shadowOffset: {
       width: 0,
       height: elevation.value * 2,
@@ -53,7 +53,7 @@ export const AnimatedShadow = ({
     },
     shadowRadius: 0.2,
     shadowColor: 'white',
-    shadowOpacity: 0.5 * elevation.value,
+    shadowOpacity: Math.min(0.1 * elevation.value, 0.2),
   }));
 
   return (

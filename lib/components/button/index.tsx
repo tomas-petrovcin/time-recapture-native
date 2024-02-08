@@ -21,10 +21,14 @@ todo:
 
 const ReAnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-export const AnimatedPressable = (props: PressableProps) => {
+type AnimatedPressableProps = {
+  elevation: number;
+} & PressableProps;
+
+export const AnimatedPressable = (props: AnimatedPressableProps) => {
   const scale = useSharedValue(0);
   const onHoverIn = () => {
-    scale.value = withTiming(2, {
+    scale.value = withTiming(props.elevation ?? 2, {
       easing: Easing.inOut(Easing.ease),
       duration: 100,
     });
@@ -74,9 +78,7 @@ export const Button = ({ onPress, label }: Props) => {
   return (
     <AnimatedPressable onPress={onPress}>
       <S.Wrapper>
-        <Text variant="button" textAlign="center">
-          {label}
-        </Text>
+        <Text variant="button">{label}</Text>
       </S.Wrapper>
     </AnimatedPressable>
   );

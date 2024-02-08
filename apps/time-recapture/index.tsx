@@ -1,26 +1,33 @@
 import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
 
+import { NativeModules } from 'react-native';
+
 import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from 'styled-components';
 
+import { useGlobalShortcuts } from '@lib/features';
 import { Home } from '@lib/pages';
 import { theme } from '@lib/utils';
 
+import { initAppState } from '../../lib/api/apollo';
 import { apolloClient } from '../../lib/api/apollo/client.ts';
-import { MacOSWindowManager } from '../../lib/modules/window-manager';
+import { MainLayout } from '../../lib/pages/layouts/main';
 
 export const App = () => {
+  useGlobalShortcuts();
+
   useEffect(() => {
-    // transparent window, hidden title bar
-    // todo: create javascript api to control
-    MacOSWindowManager.applyStyles();
+    initAppState();
+    NativeModules.WindowManager.applyStyles();
   }, []);
 
   return (
     <ApolloProvider client={apolloClient}>
       <ThemeProvider theme={theme}>
-        <Home />
+        <MainLayout>
+          <Home />
+        </MainLayout>
       </ThemeProvider>
     </ApolloProvider>
   );

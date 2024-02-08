@@ -4,6 +4,9 @@ import AppKit
 class WindowManager: NSObject {
 
   @objc
+  var bridge: RCTBridge!
+
+  @objc
   func applyStyles() -> Void {
     DispatchQueue.main.async {
       if #available(macOS 10.2, *) {
@@ -11,7 +14,8 @@ class WindowManager: NSObject {
         window.isMovableByWindowBackground  = false;
         window.isOpaque = false;
         window.hasShadow = true;
-        window.backgroundColor = NSColor.clear;
+        window.backgroundColor = NSColor.
+
 
         window.contentView?.wantsLayer = true;
         window.contentView?.layer?.backgroundColor = NSColor.clear.cgColor;
@@ -28,17 +32,18 @@ class WindowManager: NSObject {
 
   @objc
   func startListeningForKeys() {
+    print("maybe listening ?")
     NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [unowned self] in
         self.handleKeyDownEvent($0)
+        print("keyDOWN!!!!")
         return $0
     }
   }
 
   private func handleKeyDownEvent(_ event: NSEvent) {
-    // Define the key events and modifiers here
-    if event.modifierFlags.contains(.command) && event.keyCode == 8 {
-      KeyEventListener().sendKeyEvent(event.keyCode)
-    }
+    let eventEmitter = self.bridge.module(forName: "KeyEventListener") as! KeyEventListener
+    eventEmitter.sendKeyEvent(event)
+//    KeyEventListener().sendKeyEvent(event.keyCode)
   }
 
   @objc

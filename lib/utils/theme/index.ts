@@ -1,3 +1,5 @@
+const formatSize = (size: number) => `${size}px`;
+
 export const theme = {
   radius: {
     small: 4,
@@ -13,7 +15,9 @@ export const theme = {
   },
 
   spacingBase: 6,
-  spacing: (scale: number) => `${scale * theme.spacingBase}px`,
+  spacing: (...scale: number[]) => {
+    return scale.map(v => formatSize(v * theme.spacingBase)).join(' ');
+  },
 
   typography: {
     size: {
@@ -50,11 +54,11 @@ export const theme = {
     },
 
     background: {
-      light: '#bababa88',
+      light: '#bababa44',
       lightTransparent: '#bababa44',
       button: '#4a4a4a22',
-      dark: '#21212188',
-      darkTransparent: '#21212199',
+      dark: '#21212144',
+      darkTransparent: '#21212144',
       paper: '#616161ee',
     },
     divider: {

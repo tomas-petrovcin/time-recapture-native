@@ -8,6 +8,7 @@ export type Focus = 'command-bar' | 'session' | 'tasks' | null;
 
 const INITIAL_STATE = {
   currentSession: null,
+  username: null,
 
   focus: 'session' as Focus,
   previousFocus: null,
@@ -45,4 +46,9 @@ export const focus = (f: Focus) => {
 export const revertFocus = () => {
   const { previousFocus } = AppState();
   focus(previousFocus);
+};
+
+export const setAppState = (state: Partial<typeof INITIAL_STATE>) => {
+  AppState({ ...AppState(), ...state });
+  storage.save(STORAGE_KEY, AppState());
 };

@@ -1,3 +1,4 @@
+import { VibrancyView } from '@fluentui-react-native/vibrancy-view';
 import { css, styled } from 'styled-components/native';
 
 import { spacing } from '@lib/utils';
@@ -10,10 +11,18 @@ export const Wrapper = styled.Pressable`
   left: 0;
   right: 0;
 
-  background: ${({ theme }) => theme.colors.background.darkTransparent};
-
   align-items: center;
-  justify-content: center;
+  padding-top: 100px;
+`;
+
+export const Container = styled(VibrancyView)`
+  flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.98;
 `;
 
 export const Input = styled.TextInput(
@@ -23,12 +32,8 @@ export const Input = styled.TextInput(
 
     padding: ${spacing(1)} ${spacing(2)};
 
-    background: ${theme.colors.accent.dark};
     border-radius: ${theme.radius.small}px;
-    box-shadow: ${theme.shadow.medium};
-    shadow-color: ${theme.colors.accent.dark};
 
-    font-family: ${theme.typography.family.primary.semiBold};
     font-size: ${theme.typography.size.headline}px;
   `,
 );

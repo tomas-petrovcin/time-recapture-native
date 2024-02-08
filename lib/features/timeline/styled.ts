@@ -7,8 +7,9 @@ import { spacing } from '@lib/utils';
 
 export const Wrapper = styled.View`
   flex: 1;
-  background: ${({ theme }) => theme.colors.background.dark};
-  border-radius: ${({ theme }) => theme.radius.large}px;
+
+  border-radius: ${({ theme }) => theme.radius.medium}px;
+  border: 2px solid ${({ theme }) => theme.colors.divider.secondary};
   padding: ${spacing(4)} 0;
   overflow: hidden;
 `;

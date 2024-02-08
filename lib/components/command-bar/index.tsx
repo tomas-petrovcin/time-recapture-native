@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import { KeyboardEvent } from 'react-native-macos';
-
 import { revertFocus, useAppState } from '../../api/apollo';
 
 import * as S from './styled';
@@ -37,16 +35,21 @@ export const CommandBar = () => {
   }
 
   return (
-    <S.Wrapper onPress={revertFocus} allowsVibrancy>
-      <S.Input
-        placeholder="Create a new task.."
-        autoFocus
-        editable
-        onChangeText={setText}
-        onKeyPress={onKeyDown}
-        onSubmitEditing={revertFocus}
-        value={text}
-      />
-    </S.Wrapper>
+    <S.Container material="popover" state="active" blendingMode="withinWindow">
+      <S.Wrapper onPress={revertFocus}>
+        <S.Input
+          placeholder="Create a new task.."
+          placeholderTextColor="#999"
+          autoFocus
+          // @ts-ignore
+          enableFocusRing={false}
+          editable
+          onChangeText={setText}
+          onKeyPress={onKeyDown}
+          onSubmitEditing={revertFocus}
+          value={text}
+        />
+      </S.Wrapper>
+    </S.Container>
   );
 };

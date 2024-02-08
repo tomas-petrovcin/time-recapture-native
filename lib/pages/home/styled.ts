@@ -14,10 +14,5 @@ export const Wrapper = styled.View`
 
 export const Drawer = styled.View`
   flex: 1;
-`;
-
-export const ControlPanel = styled.View`
-  padding: ${spacing(4)};
-  gap: ${spacing(4)};
-  align-items: center;
+  max-width: 200px;
 `;

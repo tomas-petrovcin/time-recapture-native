@@ -2,8 +2,15 @@
 class KeyEventListener: RCTEventEmitter {
 
   @objc
-  func sendKeyEvent(_ key: UInt16) -> Void {
-    self.sendEvent(withName: "keyDown", body: ["key": key])
+  func sendKeyEvent(_ event: NSEvent) -> Void {
+
+    let eventDetails: [String: Any] = [
+        "keyCode": event.keyCode,
+        "isARepeat": event.isARepeat,
+        "modifierFlags": event.modifierFlags.rawValue
+    ]
+
+    self.sendEvent(withName: "keyDown", body: eventDetails)
   }
 
   override func supportedEvents() -> [String]? {

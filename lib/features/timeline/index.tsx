@@ -11,7 +11,7 @@ import Animated, {
 
 import { format } from 'date-fns';
 
-import { Slider, InnerShadow, Text } from '@lib/components';
+import { Slider, InnerShadow } from '@lib/components';
 
 import * as S from './styled';
 
@@ -84,14 +84,12 @@ export const Timeline = () => {
 
   return (
     <>
-      <InnerShadow>
-        <S.Wrapper>
-          <S.Timeline onLayout={onLayout}>
-            <S.LayoutContainer>{HourlyMarkers}</S.LayoutContainer>
-            <CurrentTime layoutHeight={layoutHeight} />
-          </S.Timeline>
-        </S.Wrapper>
-      </InnerShadow>
+      <S.Wrapper>
+        <S.Timeline onLayout={onLayout}>
+          <S.LayoutContainer>{HourlyMarkers}</S.LayoutContainer>
+          <CurrentTime layoutHeight={layoutHeight} />
+        </S.Timeline>
+      </S.Wrapper>
       <Slider />
     </>
   );
