@@ -9,7 +9,7 @@ type Props = {
 export const MainLayout = ({ children }: Props) => {
   return (
     <VibrancyView
-      style={{ flex: 1 }}
+      style={{ flex: 1, borderRadius: 12 }}
       material="fullScreenUI"
       blendingMode="behindWindow"
       state="active">

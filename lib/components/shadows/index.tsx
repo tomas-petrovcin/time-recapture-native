@@ -39,11 +39,16 @@ export const AnimatedShadow = ({
     borderRadius: 30,
     shadowRadius: elevation.value,
     shadowColor: 'black',
-    shadowOpacity: Math.min(elevation.value * 0.2, 0.4),
+    shadowOpacity: Math.min(elevation.value * 0.2, 0.3),
     shadowOffset: {
       width: 0,
       height: elevation.value * 2,
     },
+    transform: [
+      {
+        scale: 1 + elevation.value * 0.01,
+      },
+    ],
   }));
 
   const reflectionStyle = useAnimatedStyle(() => ({

@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
-
-import { VibrancyView } from '@fluentui-react-native/vibrancy-view';
+import React from 'react';
 
 import { CommandBar } from '@lib/components';
-import { Timeline, useGlobalShortcuts } from '@lib/features';
+import { Timeline } from '@lib/features';
 
-import { initAppState } from '../../api/apollo';
 import { TaskScheduler } from '../../features/task-scheduler';
 
 import * as S from './styled';

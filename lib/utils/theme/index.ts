@@ -62,7 +62,7 @@ export const theme = {
       paper: '#616161ee',
     },
     divider: {
-      main: '#e8e8e8',
+      main: '#e8e8e888',
       secondary: '#e8e8e844',
       alt: '#313131',
     },

@@ -8,8 +8,6 @@ export const Wrapper = styled.View`
   padding: ${spacing(4)} ${spacing(4)};
   gap: ${spacing(4)};
   border-radius: ${({ theme }) => theme.radius.large}px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 `;
 
 export const Drawer = styled.View`

@@ -10,7 +10,7 @@ RCT_EXTERN_METHOD(sendKeyEvent:(nonnull NSNumber *)key)
 
 @interface RCT_EXTERN_MODULE(WindowManager, NSObject)
 
-RCT_EXTERN_METHOD(applyStyles)
+RCT_EXTERN_METHOD(applyStyles:(NSDictionary *)params)
 RCT_EXTERN_METHOD(startListeningForKeys)
 
 @end
