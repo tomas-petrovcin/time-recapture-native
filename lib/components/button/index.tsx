@@ -58,6 +58,7 @@ export const AnimatedPressable = (props: AnimatedPressableProps) => {
 
   return (
     <ReAnimatedPressable
+      enableFocusRing={false}
       {...{
         onHoverIn,
         onHoverOut,

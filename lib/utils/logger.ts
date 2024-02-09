@@ -1,5 +1,3 @@
-import { blue, green, white, yellow } from 'ansis';
-
 const betterLogColors = {
   bright: '\x1b[1m',
   dim: '\x1b[2m',

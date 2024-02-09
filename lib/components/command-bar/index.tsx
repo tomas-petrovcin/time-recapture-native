@@ -5,26 +5,6 @@ import { revertFocus, useAppState } from '../../api/apollo';
 import * as S from './styled';
 
 export const CommandBar = () => {
-  const onKeyDown = ({ nativeEvent }: any) => {
-    console.log('key down', nativeEvent);
-
-    // console.log('key down', {
-    //   capsLockKey,
-    //   shiftKey,
-    //   controlKey,
-    //   optionKey,
-    //   commandKey,
-    //   numericPadKey,
-    //   helpKey,
-    //   functionKey,
-    //   leftArrowKey,
-    //   rightArrowKey,
-    //   upArrowKey,
-    //   downArrowKey,
-    //   key,
-    // });
-  };
-
   const [text, setText] = useState('');
   const { focus } = useAppState();
 
@@ -45,7 +25,6 @@ export const CommandBar = () => {
           enableFocusRing={false}
           editable
           onChangeText={setText}
-          onKeyPress={onKeyDown}
           onSubmitEditing={revertFocus}
           value={text}
         />
